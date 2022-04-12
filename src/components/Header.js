@@ -89,7 +89,11 @@ a{
   font-weight: 600;
   text-transform: uppercase;
   margin-right: 20px;
+  @media(max-width: 600px){
+    display: none;
+  }
  }
+
 `
 
 const CustomMenu = styled(FaBars)`
@@ -114,6 +118,7 @@ li{
   border-bottom: 1px solid silver;
   a{
     font-weight: bold;
+    cursor: pointer;
   }
 }
 `

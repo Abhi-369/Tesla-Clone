@@ -11,8 +11,8 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
             </ItemText>
         </Fade>
 
-            <Buttons>
-        <Fade bottom>
+        <Buttons>
+            <Fade bottom>
                 <ButtonGroup>
                     <LeftButton>
                         {leftBtnText}
@@ -24,8 +24,8 @@ function Section({ title, description, leftBtnText, rightBtnText, backgroundImg 
                     }
                 </ButtonGroup>
                 <DownArrow src="/images/down-arrow.svg" />
-        </Fade>
-            </Buttons>
+            </Fade>
+        </Buttons>
     </Wrap>;
 }
 
@@ -42,12 +42,27 @@ display: flex;
 flex-direction: column;
 justify-content: space-between;
 align-items: center;
-background-image: ${props => `url("/images/${props.bgImage}")`} ;
+background-image: ${props => `url("/images/${props.bgImage}")`};
+@media(max-width: 768px) {
+    height: 60vh;
+}
 `
 
 const ItemText = styled.div`
 padding-top: 15vh;
 text-align: center;
+ 
+>p{
+    padding: 10px;
+}
+
+@media(max-width: 768px) {
+    padding-top: 8vh;
+    >h1{
+        font-size: 20px;
+        color: black;
+    }
+}
 `
 
 const ButtonGroup = styled.div`
@@ -55,6 +70,7 @@ display: flex;
 margin-bottom: 30px;
 @media (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: -25px;
 }
 `
 const LeftButton = styled.div`
@@ -71,11 +87,18 @@ text-transform: uppercase;
 font-size: 12px;
 cursor: pointer;
 margin: 5px;
+@media(max-width: 768px) {
+    opacity: 1;
+    width: 300px;
+}
 `
 const RightButton = styled(LeftButton)`
 background: white;
 color: black;
 opacity: 0.6;
+@media(max-width: 768px) {
+    opacity: 1;
+}
 `
 
 const DownArrow = styled.img`
